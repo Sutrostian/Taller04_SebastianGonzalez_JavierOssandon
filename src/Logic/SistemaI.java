@@ -36,5 +36,10 @@ private static ArrayList<Carta> cartas = new ArrayList<Carta>();
 		}
 		
 	}
+	
+	@Override
+	public ArrayList<Carta> getCartas() {
+		return cartas;
+	}
 
 }

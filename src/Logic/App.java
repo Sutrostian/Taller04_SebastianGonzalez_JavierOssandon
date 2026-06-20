@@ -1,8 +1,10 @@
+// Sebastian Andres Gonzalez Rossi - 21.186.016-2 - Ingenieria Civil Industrial - Sutrostian
+// Javier Ignacio Ossandon Calderon - 21.979.689-2 - Ingenieria Civil Industrial - javierossand/itsvoiiid
 package Logic;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
+import Gui.VentanaPrincipal;
 
 public class App {
 	
@@ -11,7 +13,7 @@ public class App {
 
 	public static void main(String[] args) throws IOException {
 		cargarArch();
-		mostrarCartas();
+		new VentanaPrincipal();
 
 	}
 	

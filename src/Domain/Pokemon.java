@@ -23,6 +23,10 @@ public class Pokemon extends Carta {
 	public String toString() {
 		return "Pokemon [dano=" + dano + ", cantEnergia=" + cantEnergia + "]";
 	}
+	
+	
+
+	
 
 	
 	
