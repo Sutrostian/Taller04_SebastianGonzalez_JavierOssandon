@@ -31,6 +31,16 @@ public class PanelColeccion extends JPanel {
 
 		// Creamos la JTable usando el modelo recién creado
 		tabla = new JTable(modelo);
+		
+		tabla.getSelectionModel().addListSelectionListener(e -> { //hacemos un listener si es que apreta una fila
+
+			if(!e.getValueIsAdjusting()) { //si no cambia de fila
+
+				mostrarDetalleCarta(); //llamamos al metodo
+
+			}
+
+		});
 
 		// Cargamos las cartas del sistema dentro de la tabla
 		cargarCartas();
@@ -75,5 +85,20 @@ public class PanelColeccion extends JPanel {
 		modelo.setRowCount(0);
 
 		cargarCartas();
+	}
+	
+	private void mostrarDetalleCarta() {
+
+		int fila = tabla.getSelectedRow();
+
+		if(fila == -1) { //selected row retorna -1 cuando no hay fila
+			return;
+		}
+
+		ArrayList<Carta> cartas = sistema.getCartas();
+
+		Carta cartaSeleccionada = cartas.get(fila);
+
+		new VentanaDetalleCarta(cartaSeleccionada);
 	}
 }
