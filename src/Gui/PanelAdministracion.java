@@ -4,7 +4,6 @@ import Logic.*;
 
 public class PanelAdministracion extends JPanel {
 	
-	private ISistema sistema = App.sistema; 
 	private JTextField txtNombre;// Caja donde el usuario escribirá el nombre de la carta
 	private JTextField txtRareza;// Caja donde el usuario escribirá la rareza
 	private JTextField txtAtributo1;// Caja para el primer atributo adicional
@@ -22,7 +21,7 @@ public class PanelAdministracion extends JPanel {
 		add(txtNombre);// Agregamos la caja al panel
 
 		//Rareza
-		add(new JLabel("Rareza"));
+		add(new JLabel("Rareza")); //es el texto
 		txtRareza = new JTextField(20);
 		add(txtRareza);
 
@@ -48,35 +47,32 @@ public class PanelAdministracion extends JPanel {
 		add(txtAtributo2);
 
 		// Botones
+		
 		btnAgregar = new JButton("Agregar"); //Agregar
 		add(btnAgregar);
-		btnAgregar.addActionListener(e -> agregarCarta());
+		btnAgregar.addActionListener(e -> agregarCarta()); //si apreta agregar llama a este metodo agregar carta
+		
 		btnEliminar = new JButton("Eliminar"); //Eliminar
 		add(btnEliminar);
+		btnEliminar.addActionListener(e -> eliminarCarta());
+		
 		btnModificar = new JButton("Modificar"); //Modificar	
 		add(btnModificar);
+		btnModificar.addActionListener(e -> modificarCarta());
 
 	}
 
+	private void modificarCarta() {
+		
+	}
+
+	private void eliminarCarta() {
+		
+	
+	}
+
 	private void agregarCarta() {
-	    try {
-	        String nombre = txtNombre.getText();
-	        String rareza = txtRareza.getText();
-	        String tipo = comboTipo.getSelectedItem().toString();
-	        String[] partes;
-	        if(tipo.equals("Pokemon")) {
-	            partes = new String[] {nombre,rareza,tipo,txtAtributo1.getText(),txtAtributo2.getText()};
-	        } else {
-	            partes = new String[] {nombre,rareza,tipo,txtAtributo1.getText()};
-	        }
-	        sistema.agregarCarta(partes);
-	        JOptionPane.showMessageDialog(this,"Carta agregada correctamente");
-	        
-	    } catch(Exception ex) {
-
-	        JOptionPane.showMessageDialog(this,"Datos inválidos");
-
-	    }
+	   
 	}
 
 }

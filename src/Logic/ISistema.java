@@ -6,10 +6,12 @@ import Domain.Carta;
 
 public interface ISistema {
 
-	void agregarCarta(String[] partes);
-
 	void mostrarCartas();
-	
-	ArrayList<Carta> getCartas();
+	void getStrategyRareza();
+	void getStrategyPoder();
+	void getStrategyNombre();
+	void eliminarCarta(String nombre);
+	ArrayList<Carta> obtenerCartas();
+	void cargarCartas(String linea);
 
 }

@@ -8,7 +8,7 @@ public class VentanaDetalleCarta extends JFrame {
 
 	public VentanaDetalleCarta(Carta carta) {
 
-		setTitle(carta.getNombreCarta());
+		setTitle(carta.getNombre());
 
 		setSize(400,300);
 
